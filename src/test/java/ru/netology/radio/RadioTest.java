@@ -184,5 +184,29 @@ public class RadioTest {
         assertEquals(6, radio.getCurrentVolume());
     }
 
-}
+    @Test
+    public void setNumberStationTestUnderMinNumber() {
+        Radio radio = new Radio();
+        radio.setMaxStation(9);
+        radio.setMinStation(0);
+        radio.setNumberStation(-3);
+        assertEquals(0, radio.getNumberStation());
+    }
+
+        @Test
+        public void setNumberStationTestNormalNumber(){
+            Radio radio = new Radio();
+            radio.setNumberStation(9);
+            assertEquals(8,radio.getNumberStation());
+        }
+
+        @Test
+        public void setNumberStationTestOverMaxNumber(){
+            Radio radio = new Radio();
+            radio.setMaxStation(9);
+            radio.setMinStation(0);
+            radio.setNumberStation(18);
+            assertEquals(9,radio.getNumberStation());
+        }
+    }
 
