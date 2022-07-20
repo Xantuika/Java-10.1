@@ -14,6 +14,10 @@ public class Radio {
         this.minStation = minStation;
     }
 
+    public Radio() {
+
+    }
+
     public int getMaxStation() {
         return maxStation;
     }
